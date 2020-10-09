@@ -14,7 +14,7 @@ import './counter_bloc.dart';
 class CounterPageComponent implements OnDestroy {
   final CounterBloc counterBloc;
 
-  CounterPageComponent(this.counterBloc) {}
+  CounterPageComponent(this.counterBloc);
 
   @override
   void ngOnDestroy() {
