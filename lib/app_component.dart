@@ -1,16 +1,9 @@
 import 'package:angular/angular.dart';
-
-import 'src/todo_list/todo_list_component.dart';
-
-// AngularDart info: https://angulardart.dev
-// Components info: https://angulardart.dev/components
+import 'package:ARShopUTC/src/counter_page/counter_page_component.dart';
 
 @Component(
   selector: 'my-app',
-  styleUrls: ['app_component.css'],
   templateUrl: 'app_component.html',
-  directives: [TodoListComponent],
+  directives: [CounterPageComponent],
 )
-class AppComponent {
-  // Nothing here yet. All logic is in TodoListComponent.
-}
+class AppComponent {}
