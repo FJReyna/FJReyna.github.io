@@ -1,9 +1,15 @@
+import 'package:ARShopUTC/src/footer_component/footer_component.dart';
+import 'package:ARShopUTC/src/header_component/header_component.dart';
+import 'package:ARShopUTC/src/home_page_component/home_page_component.dart';
 import 'package:angular/angular.dart';
-import 'package:ARShopUTC/src/counter_page/counter_page_component.dart';
 
 @Component(
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: 'app_component.html',
-  directives: [CounterPageComponent],
+  directives: [
+    HeaderComponent,
+    HomePageComponent,
+    FooterComponent
+  ],
 )
 class AppComponent {}

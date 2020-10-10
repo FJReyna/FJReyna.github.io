@@ -106,13 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-  bootstrap_sass:
+  bootstrap_bundle:
     dependency: "direct main"
     description:
-      name: bootstrap_sass
+      name: bootstrap_bundle
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.5.0"
+    version: "1.12.0"
   build:
     dependency: transitive
     description:
