@@ -1,6 +1,7 @@
 import 'package:ARShopUTC/src/footer_component/footer_component.dart';
 import 'package:ARShopUTC/src/header_component/header_component.dart';
 import 'package:ARShopUTC/src/home_page_component/home_page_component.dart';
+import 'package:ARShopUTC/src/not_found_component/not_found_component.dart';
 import 'package:ARShopUTC/src/utils/routes.dart';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
@@ -12,7 +13,8 @@ import 'package:angular_router/angular_router.dart';
     routerDirectives,
     HeaderComponent,
     HomePageComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent,
   ],
   exports: [RoutePaths, Routes],
 )
