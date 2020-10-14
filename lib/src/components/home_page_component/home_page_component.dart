@@ -1,43 +1,38 @@
 import 'package:ARShopUTC/src/model/ProductModel.dart';
 import 'package:angular/angular.dart';
+import 'package:ARShopUTC/src/services/ProductsService.dart';
+import 'package:angular_components/angular_components.dart';
 
 @Component(
   selector: 'homepage-component',
   templateUrl: 'home_page_component.html',
   styleUrls: ['home_page_component.css'],
-  directives: [coreDirectives],
+  directives: [
+    coreDirectives,
+    
+  ],
+  providers: [ProductService],
 )
 class HomePageComponent implements OnInit {
-  List<ProductModel> products = [
-    ProductModel(
-      1, 
-      5, 
-      1, 
-      'Silla', 
-      'Silla', 
-      'Furniture1.jpg',
-      500,
-    ),
-    ProductModel(
-      1, 
-      5, 
-      1, 
-      'Mesa', 
-      'Mesa', 
-      'Furniture2.jpg',
-      1500,
-    ),
-    ProductModel(
-      1, 
-      5, 
-      1, 
-      'Mesa 2', 
-      'Mesa', 
-      'Furniture3.jpg',
-      3000,
-    ),
-  ];
+  final ProductService _productService;
+  String errorMessage;
+  final ChangeDetectorRef _changeDetectorRef;
+
+  HomePageComponent(this._productService, this._changeDetectorRef);
+
+  List<ProductModel> products = [];
 
   @override
-  void ngOnInit() {}
+  void ngOnInit() {
+    _getProductsToShow();
+  }
+
+  Future<void> _getProductsToShow() async {
+    try {
+      products = await _productService.getAll();
+    } catch (e) {
+      errorMessage = e.toString();
+    }
+    _changeDetectorRef.markForCheck();
+  }
 }

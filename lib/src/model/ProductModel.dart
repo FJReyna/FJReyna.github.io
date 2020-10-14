@@ -1,6 +1,5 @@
 class ProductModel {
-  int stockID;
-  int stockQuantity;
+  int furnitureStock;
   int furnitureID;
   String furnitureName;
   String furnitureType;
@@ -8,12 +7,20 @@ class ProductModel {
   double furniturePrice;
 
   ProductModel(
-    this.stockID,
-    this.stockQuantity,
+    this.furnitureStock,
     this.furnitureID,
     this.furnitureName,
     this.furnitureType,
     this.furnitureImage,
     this.furniturePrice,
   );
+
+  ProductModel.fromJson(Map<String, dynamic> data) {
+    furnitureStock = data['furnitureStock'];
+    furnitureID = data['furnitureID'];
+    furnitureName = data['furnitureName'];
+    furnitureType = data['furnitureType'];
+    furnitureImage = data['furnitureImage'];
+    furniturePrice = data['furniturePrice'];
+  }
 }
