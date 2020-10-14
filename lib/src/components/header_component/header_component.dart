@@ -5,6 +5,4 @@ import 'package:angular/angular.dart';
   templateUrl: 'header_component.html',
   styleUrls: ['header_component.css'],
 )
-class HeaderComponent {
-  
-}
+class HeaderComponent {}

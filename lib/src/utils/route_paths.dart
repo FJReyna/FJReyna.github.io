@@ -4,4 +4,5 @@ class RoutePaths {
   static final homePage = RoutePath(path: 'HomePage');
   static final counter = RoutePath(path: 'CounterPage');
   static final notFound = RoutePath(path: '404');
+  static final signInPage = RoutePath(path: 'SignInPage');
 }
