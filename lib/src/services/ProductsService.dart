@@ -29,7 +29,6 @@ class ProductService {
   dynamic _extractData(Response resp) => json.decode(resp.body)['data'];
 
   Exception _handleError(dynamic e) {
-    print(e); // for demo purposes only
     return Exception('Server error; cause: $e');
   }
 }
