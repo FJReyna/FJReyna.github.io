@@ -10,6 +10,8 @@ import 'package:ARShopUTC/src/components/signup_component/signup_component.templ
     as signup_component;
 import 'package:ARShopUTC/src/components/profile_component/profile_component.template.dart'
     as profile_component;
+import 'package:ARShopUTC/src/components/catalog_component/catalog_component.template.dart'
+    as catalog_component;
 import 'package:ARShopUTC/src/components/not_found_component/not_found_component.template.dart'
     as not_found_component;
 
@@ -41,12 +43,18 @@ class Routes {
     component: profile_component.ProfileComponentNgFactory,
   );
 
+  static final catalogPage = RouteDefinition(
+    routePath: RoutePaths.catalogPage,
+    component: catalog_component.CatalogComponentNgFactory,
+  );
+
   static final all = <RouteDefinition>[
     homePage,
     counter,
     signInPage,
     signUpPage,
     profilePage,
+    catalogPage,
     RouteDefinition.redirect(
       path: '',
       redirectTo: RoutePaths.homePage.toUrl(),

@@ -1,31 +1,34 @@
 import 'package:ARShopUTC/src/model/ProductModel.dart';
-import 'package:angular/angular.dart';
 import 'package:ARShopUTC/src/services/ProductsService.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_router/angular_router.dart';
+import 'package:dio/dio.dart';
 
 @Component(
-  selector: 'homepage-component',
-  templateUrl: 'home_page_component.html',
-  styleUrls: ['home_page_component.css'],
+  selector: 'catalog-component',
+  templateUrl: 'catalog_component.html',
+  styleUrls: ['catalog_component.css'],
   directives: [
     coreDirectives,
+    routerDirectives,
   ],
   providers: [ProductService],
 )
-class HomePageComponent implements OnInit {
+class CatalogComponent implements OnInit {
   final ProductService _productService;
-  String errorMessage = '';
   final ChangeDetectorRef _changeDetectorRef;
-
-  HomePageComponent(this._changeDetectorRef, this._productService);
+  String errorMessage = '';
 
   List<ProductModel> products = [];
+
+  CatalogComponent(this._changeDetectorRef, this._productService);
 
   @override
   void ngOnInit() {
     _getProductsToShow();
   }
 
-  Future<void> _getProductsToShow() async {
+  void _getProductsToShow() async {
     try {
       products = await _productService.getAll();
     } catch (e) {

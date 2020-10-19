@@ -7,4 +7,5 @@ class RoutePaths {
   static final signInPage = RoutePath(path: 'SignInPage');
   static final signUpPage = RoutePath(path: 'SignUpPage');
   static final profilePage = RoutePath(path: 'ProfilePage');
+  static final catalogPage = RoutePath(path: 'CatalogPage');
 }
