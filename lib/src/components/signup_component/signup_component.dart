@@ -23,10 +23,10 @@ class SignUpComponent implements OnInit {
   String message = '';
   bool isLoading = false;
 
-  final nameControl = Control('name', Validators.required);
-  final userNameControl = Control('userName', Validators.required);
-  final emailControl = Control('email', Validators.required);
-  final passwordControl = Control('password', Validators.required);
+  final nameControl = Control('', Validators.required);
+  final userNameControl = Control('', Validators.required);
+  final emailControl = Control('', Validators.required);
+  final passwordControl = Control('', Validators.required);
 
   ControlGroup formGroup;
 
@@ -41,11 +41,17 @@ class SignUpComponent implements OnInit {
       password: passwordControl.rawValue.trim(),
     );
     message = _result['message'];
+    formGroup.reset();
     isLoading = false;
   }
 
   @override
   void ngOnInit() {
-    formGroup = FormBuilder.controlGroup({'name': nameControl});
+    formGroup = FormBuilder.controlGroup({
+      'inputName': nameControl,
+      'inputEmail': emailControl,
+      'inputUsername': userNameControl,
+      'inputPassword': passwordControl,
+    });
   }
 }

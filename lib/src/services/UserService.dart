@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:ARShopUTC/src/model/UserModel.dart';
 import 'package:ARShopUTC/src/utils/ARShopAPI.dart';
 import 'dart:html' as html;
@@ -14,11 +12,13 @@ class UserService {
 
   UserService(this._http);
 
-  Future<UserModel> signIn({
+  Future<Map<String, dynamic>> signIn({
     @required String username,
     @required String password,
   }) async {
-    UserModel _user;
+    var _user = {};
+    var _success = false;
+    var _message = '';
     try {
       final _response = await _http.post(
         _signinEndpoint,
@@ -28,11 +28,29 @@ class UserService {
         },
       );
 
-      _user = UserModel.fromJson(_response.data['data']);
+      print(_response.data);
+
+      if (_response.statusCode == 200) {
+        _success = true;
+        _user = {
+          'id': _response.data['data']['userID'],
+          'email': _response.data['data']['userEmail'],
+          'name': _response.data['data']['userName'],
+          'roles': _response.data['data']['userRoles'],
+          'token': _response.data['data']['token'],
+          username: _response.data['data']['userUsername'],
+        };
+        print(_user);
+      }
+      _message = _response.data['message'];
     } catch (error) {
       _handleError(error);
     }
-    return _user;
+    return {
+      'success': _success,
+      'user': _user,
+      'message': _message,
+    };
   }
 
   Future<Map<String, dynamic>> signUp({
@@ -51,6 +69,7 @@ class UserService {
           'username': username,
           'email': email,
           'password': password,
+          'rolesUser': ['user'],
         },
       );
 
