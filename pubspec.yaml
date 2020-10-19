@@ -18,6 +18,7 @@ dependencies:
   hive: ^1.4.4+1
   http: ^0.12.2
   stream_transform: ^1.2.0
+  dart_browser_loader: ^0.0.6+1
 
 dev_dependencies:
   angular_test: ^2.3.0

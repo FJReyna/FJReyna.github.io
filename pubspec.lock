@@ -267,6 +267,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.16.2"
+  dart_browser_loader:
+    dependency: "direct main"
+    description:
+      name: dart_browser_loader
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6+1"
   dart_internal:
     dependency: transitive
     description:

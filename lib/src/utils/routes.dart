@@ -12,6 +12,8 @@ import 'package:ARShopUTC/src/components/profile_component/profile_component.tem
     as profile_component;
 import 'package:ARShopUTC/src/components/catalog_component/catalog_component.template.dart'
     as catalog_component;
+import 'package:ARShopUTC/src/components/furniture_component/furniture_component.template.dart'
+    as furniture_component;
 import 'package:ARShopUTC/src/components/not_found_component/not_found_component.template.dart'
     as not_found_component;
 
@@ -48,6 +50,11 @@ class Routes {
     component: catalog_component.CatalogComponentNgFactory,
   );
 
+  static final furniturePage = RouteDefinition(
+    routePath: RoutePaths.furniturePage,
+    component: furniture_component.FurnitureComponentNgFactory,
+  );
+
   static final all = <RouteDefinition>[
     homePage,
     counter,
@@ -55,6 +62,7 @@ class Routes {
     signUpPage,
     profilePage,
     catalogPage,
+    furniturePage,
     RouteDefinition.redirect(
       path: '',
       redirectTo: RoutePaths.homePage.toUrl(),
