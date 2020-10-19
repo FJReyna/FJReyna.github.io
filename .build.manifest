@@ -1,6 +1,8 @@
 .dart_tool/package_config.json
 .packages
 assets/img/Branding/ARShopLogoWhite.png
+assets/img/Branding/appstore-android.svg
+assets/img/Branding/appstore-apple.svg
 assets/img/Furniture/Furniture1.jpg
 assets/img/Furniture/Furniture2.jpg
 assets/img/Furniture/Furniture3.jpg
