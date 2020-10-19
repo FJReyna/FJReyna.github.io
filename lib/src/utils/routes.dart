@@ -16,6 +16,8 @@ import 'package:ARShopUTC/src/components/furniture_component/furniture_component
     as furniture_component;
 import 'package:ARShopUTC/src/components/aboutus_component/aboutus_component.template.dart'
     as aboutus_component;
+import 'package:ARShopUTC/src/components/downloadapp_component/downloadapp_component.template.dart'
+    as downloadapp_component;
 import 'package:ARShopUTC/src/components/not_found_component/not_found_component.template.dart'
     as not_found_component;
 
@@ -62,6 +64,11 @@ class Routes {
     component: aboutus_component.AboutUsComponentNgFactory,
   );
 
+  static final downloadAppPage = RouteDefinition(
+    routePath: RoutePaths.downloadAppPage,
+    component: downloadapp_component.DownloadAppComponentNgFactory,
+  );
+
   static final all = <RouteDefinition>[
     homePage,
     counter,
@@ -71,6 +78,7 @@ class Routes {
     catalogPage,
     furniturePage,
     aboutUsPage,
+    downloadAppPage,
     RouteDefinition.redirect(
       path: '',
       redirectTo: RoutePaths.homePage.toUrl(),
