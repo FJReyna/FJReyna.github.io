@@ -55,6 +55,7 @@ class SignInComponent implements OnInit {
       }));
       formGroup.reset();
       await _router.navigate(RoutePaths.counter.toUrl());
+      html.window.location.href = '/';
     }
 
     message = _result['message'];

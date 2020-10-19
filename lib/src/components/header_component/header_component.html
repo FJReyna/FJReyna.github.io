@@ -4,10 +4,18 @@
             id="navcol-1">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link active" href="/#/CounterPage">Catalogo</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#/SignInPage">Iniciar sesión</a></li>
+                <div *ngIf="isSignedOut">
+                    <li class="nav-item"><a class="nav-link" href="/#/SignInPage">Iniciar sesión</a></li>
+                </div>
+                <div *ngIf="isSignedOut != true">
+                    <li class="nav-item"><a class="nav-link" href="/#/Profile">Mi Perfil</a></li>
+                </div>
                 <li class="nav-item"></li>
-                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Descargar app</a></li>
+                <div *ngIf="isSignedOut != true">
+                    <li class="nav-item"><a class="nav-link" (click)="onSignOut()">Cerrar Sesión</a></li>
+                </div>
             </ul>
         </div>
     </div>
