@@ -6,7 +6,10 @@ import 'package:ARShopUTC/src/components/home_page_component/home_page_component
     as home_page_component;
 import 'package:ARShopUTC/src/components/signin_component/signin_component.template.dart'
     as signin_component;
-import 'package:ARShopUTC/src/components/signup_component/signup_component.template.dart' as signup_component;
+import 'package:ARShopUTC/src/components/signup_component/signup_component.template.dart'
+    as signup_component;
+import 'package:ARShopUTC/src/components/profile_component/profile_component.template.dart'
+    as profile_component;
 import 'package:ARShopUTC/src/components/not_found_component/not_found_component.template.dart'
     as not_found_component;
 
@@ -33,11 +36,17 @@ class Routes {
     component: signup_component.SignUpComponentNgFactory,
   );
 
+  static final profilePage = RouteDefinition(
+    routePath: RoutePaths.profilePage,
+    component: profile_component.ProfileComponentNgFactory,
+  );
+
   static final all = <RouteDefinition>[
     homePage,
     counter,
     signInPage,
     signUpPage,
+    profilePage,
     RouteDefinition.redirect(
       path: '',
       redirectTo: RoutePaths.homePage.toUrl(),

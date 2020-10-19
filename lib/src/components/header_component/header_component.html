@@ -8,13 +8,13 @@
                     <li class="nav-item"><a class="nav-link" href="/#/SignInPage">Iniciar sesión</a></li>
                 </div>
                 <div *ngIf="isSignedOut != true">
-                    <li class="nav-item"><a class="nav-link" href="/#/Profile">Mi Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/#/ProfilePage">Mi Perfil</a></li>
                 </div>
                 <li class="nav-item"></li>
                 <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Descargar app</a></li>
                 <div *ngIf="isSignedOut != true">
-                    <li class="nav-item"><a class="nav-link" (click)="onSignOut()">Cerrar Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" (click)="onSignOut()">Cerrar Sesión</a></li>
                 </div>
             </ul>
         </div>

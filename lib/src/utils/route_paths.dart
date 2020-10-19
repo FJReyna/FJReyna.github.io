@@ -6,4 +6,5 @@ class RoutePaths {
   static final notFound = RoutePath(path: '404');
   static final signInPage = RoutePath(path: 'SignInPage');
   static final signUpPage = RoutePath(path: 'SignUpPage');
+  static final profilePage = RoutePath(path: 'ProfilePage');
 }

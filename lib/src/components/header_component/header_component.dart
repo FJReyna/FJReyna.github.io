@@ -20,6 +20,7 @@ class HeaderComponent implements OnInit {
   void onSignOut() {
     html.window.localStorage.clear();
     isSignedOut = true;
+    html.window.location.href = '/';
   }
 
   @override
