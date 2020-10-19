@@ -11,6 +11,7 @@ class RoutePaths {
   static final profilePage = RoutePath(path: 'ProfilePage');
   static final catalogPage = RoutePath(path: 'CatalogPage');
   static final furniturePage = RoutePath(path: 'FurniturePage');
+  static final aboutUsPage = RoutePath(path: 'AboutUsPage');
 }
 
 int getId(Map<String, String> parameters) {
